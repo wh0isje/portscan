@@ -1,59 +1,61 @@
-Port Scanner with Vulnerability Check
-📖 About
-This is a Python script for scanning common network ports and identifying known vulnerabilities associated with them. The tool uses multithreading for efficiency and provides a clear output with colored indicators for open ports.
+# Port Scanner with Vulnerability Check
 
-🚀 Features
-Scans commonly used ports (e.g., 21, 22, 80, 443, etc.).
-Identifies known vulnerabilities related to open ports.
-Multithreaded scanning for faster results.
-Colored output for better visibility (green for open ports).
-🛠️ Requirements
-Python 3.7+
-Required Python libraries:
-termcolor for colored output.
-Install the required library using:
+![Python](https://img.shields.io/badge/python-3.7%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-bash
-Copiar código
-pip install termcolor
-📂 Usage
-Clone this repository:
-bash
-Copiar código
-git clone https://github.com/<your-username>/<your-repo-name>.git
-Navigate to the project directory:
-bash
-Copiar código
-cd <your-repo-name>
-Run the script:
-bash
-Copiar código
-python port_scanner.py
-Enter the target IP or domain when prompted.
-📜 Example Output
-plaintext
-Copiar código
-Digite o endereço IP ou domínio a ser escaneado: 192.168.1.1
+## 📖 About
+A Python script for scanning common network ports and identifying known vulnerabilities. Optimized with multithreading and provides clear, color-coded output.
 
-Iniciando scan...
-[FECHADA] Porta 21
-[ABERTA] Porta 22: SSH - Força bruta
-[FECHADA] Porta 23
-[ABERTA] Porta 80: HTTP - Vulnerabilidades XSS
+---
 
-Scan finalizado.
-🧩 How It Works
-The script takes an IP or domain as input.
-It scans a predefined list of common ports.
-If a port is open, it checks for known vulnerabilities and displays them.
-The output is color-coded for better readability.
-📌 Future Enhancements
-Add support for custom port ranges.
-Integrate with external databases for real-time vulnerability updates.
-Add logging and export options for scan results.
-🖥️ Contributions
-Contributions are welcome! Feel free to fork this repository, make your changes, and submit a pull request.
+## 🚀 Features
+- Fast scanning using multithreading.
+- Identifies vulnerabilities on common ports.
+- Colored output for better visibility.
+- Easily extendable to custom port ranges.
 
-🛡️ Disclaimer
-This tool is for educational purposes only. Unauthorized scanning of networks is illegal. Use this tool only on networks you own or have permission to test.
+---
 
+## 🛠️ Requirements
+- Python 3.7+
+- Library: `termcolor`
+
+---
+
+## 📂 Usage
+```bash
+git clone https://github.com/wh0isje/portscan.git   # Clone the repository
+
+cd portscan                                         # Navigate to the project folder
+
+pip install termcolor                               # Install the required library
+
+python portscan.py                                  # Run the script
+
+# Enter the target IP or domain when prompted
+```
+---
+
+## 📜 Example Output
+```bash
+Enter the IP address or domain to be scanned: 192.168.1.1
+
+Starting scan...
+[CLOSED] Port 21
+[OPEN] Port 22: SSH - Brute force
+[CLOSED] Port 23
+[OPEN] Port 80: HTTP - XSS vulnerabilities
+
+Scan completed.
+```
+---
+
+## 📌 Known Vulnerabilities
+```bash
+| Port | Service | Vulnerability               |
+|------|---------|-----------------------------|
+| 21   | FTP     | Plaintext passwords         |
+| 22   | SSH     | Brute-force attacks         |
+| 80   | HTTP    | XSS vulnerabilities         |
+
+```
